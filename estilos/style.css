@@ -716,3 +716,57 @@ details img:hover {
     font-weight: bold;
   }
 }
+/* ===================================================
+   ESTILOS PARA LAPTOP / PANTALLAS GRANDES (En columnas / Lado a lado)
+   =================================================== */
+
+/* Contenedor que agrupa las tarjetas de los juegos */
+.juegos {
+  display: flex;
+  flex-direction: row; /* Organiza las tarjetas en fila horizontal (columnas) */
+  flex-wrap: wrap;     /* Permite que bajen a la siguiente línea si ya no caben */
+  justify-content: center; /* Centra las tarjetas en la pantalla */
+  gap: 20px;           /* Espacio entre cada tarjeta */
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Estilo individual de cada tarjeta de juego */
+.card {
+  background-color: #1B3D2F;
+  border: 2px solid #7aeebe;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px; /* Ancho fijo para cada tarjeta en laptop */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ===================================================
+   ADAPTACIÓN PARA CELULARES Y TABLETS (En filas / Apiladas verticalmente)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+  .juegos {
+    flex-direction: column; /* Cambia la dirección a columna (apiladas en filas hacia abajo) */
+    align-items: center;    /* Centra las tarjetas en la pantalla del celular */
+  }
+
+  .card {
+    width: 90%;             /* Hace que la tarjeta ocupe casi todo el ancho del celular */
+    max-width: 320px;       /* Evita que se estiren demasiado en tablets */
+  }
+}
