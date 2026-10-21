@@ -768,5 +768,6 @@ details img:hover {
   .card {
     width: 90%;             /* Hace que la tarjeta ocupe casi todo el ancho del celular */
     max-width: 320px;       /* Evita que se estiren demasiado en tablets */
+    aspect-ratio: 9 / 14;
   }
 }
